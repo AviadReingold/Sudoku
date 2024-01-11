@@ -1,0 +1,1409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/material_dynamic_primary95"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/ly0"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layoutDirection="ltr"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/ly3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0">
+
+        <ImageButton
+            android:id="@+id/btnGoBack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:backgroundTint="#FF9800"
+            android:background="@drawable/baseline_arrow_back_24" />
+        <Space
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"></Space>
+
+        <TextView
+            android:id="@+id/tvPlayer"
+            android:layout_width="38dp"
+            android:layout_height="59dp"
+            android:layout_weight="1"
+            android:textSize="25dp"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Player Name "/>
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"></Space>
+        <TextView
+            android:id="@+id/tvPlayTime"
+            android:layout_width="10dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:textSize="15dp"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:text="Play Time:"/>
+
+        <ImageButton
+            android:id="@+id/btnPause"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/ic_pause" />
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/ly3"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layoutDirection="ltr"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.672">
+
+
+        <TextView
+            android:id="@+id/levelT"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:fontFamily="cursive"
+            android:text="Level:"
+            android:paddingLeft="10dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:textSize="20dp"
+            tools:ignore="InvalidId" />
+
+
+        <TextView
+            android:id="@+id/level"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:fontFamily="cursive"
+            android:text="Easy"
+            android:paddingRight="10dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:textSize="20dp"
+            tools:ignore="InvalidId" />
+
+        <!-- <TextView
+             android:id="@+id/mistakes"
+             android:layout_width="wrap_content"
+             android:layout_height="23dp"
+             android:layout_weight="20"
+             android:text="Mistakes: "
+             android:textColor="#0C0000"
+             android:textSize="12dp"></TextView> -->
+        <ImageView
+            android:id="@+id/life1"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.001"
+            android:paddingRight="-1dp"
+            android:src="@drawable/heart"></ImageView>
+
+        <ImageView
+            android:id="@+id/life2"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.001"
+            android:paddingRight="-1dp"
+            android:src="@drawable/heart"></ImageView>
+
+        <ImageView
+            android:id="@+id/life3"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.001"
+            android:src="@drawable/heart"></ImageView>
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"></Space>
+        <TextView
+            android:id="@+id/timer"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_weight="55"
+            android:paddingRight="15dp"
+            android:gravity="center"
+            android:text="00:00:00"
+            android:textAlignment="center"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:textSize="18dp"
+            tools:ignore="InvalidId" />
+
+
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:columnCount="9"
+        android:layoutDirection="ltr"
+        android:rowCount="9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.277"
+        tools:ignore="MissingConstraints">
+
+        <android.widget.Button
+            android:id="@+id/img0000"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_weight="1"
+            android:background="@drawable/backlefttop"
+            android:tag="outlined_button_style7" />
+
+        <android.widget.Button
+            android:id="@+id/img0001"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_weight="1"
+            android:background="@drawable/backtop"
+            android:tag="outlined_button_style" />
+
+        <android.widget.Button
+            android:id="@+id/img0002"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_weight="1"
+            android:background="@drawable/backrighttop"
+            android:tag="outlined_button_style6" />
+
+        <android.widget.Button
+            android:id="@+id/img0100"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:layout_weight="1"
+            android:background="@drawable/backlefttop"
+            android:tag="outlined_button_style" />
+
+        <android.widget.Button
+            android:id="@+id/img0101"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:layout_weight="1"
+            android:background="@drawable/backtop"
+            android:tag="outlined_button_style" />
+
+        <android.widget.Button
+            android:id="@+id/img0102"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="0"
+            android:layout_column="5"
+            android:layout_weight="1"
+            android:background="@drawable/backrighttop"
+            android:tag="outlined_button_style6" />
+
+        <android.widget.Button
+            android:id="@+id/img0200"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="0"
+            android:layout_column="6"
+            android:layout_weight="1"
+            android:background="@drawable/backlefttop"
+            android:tag="outlined_button_style" />
+
+        <android.widget.Button
+            android:id="@+id/img0201"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="0"
+            android:layout_column="7"
+            android:layout_weight="1"
+            android:background="@drawable/backtop"
+            android:tag="outlined_button_style" />
+
+        <android.widget.Button
+            android:id="@+id/img0202"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="0"
+            android:layout_column="8"
+            android:layout_weight="1"
+            android:background="@drawable/backrighttop"
+            android:tag="outlined_button_style9" />
+
+        <android.widget.Button
+            android:id="@+id/img0010"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_weight="1"
+            android:background="@drawable/backleft"
+            android:tag="outlined_button_style3" />
+
+        <android.widget.Button
+            android:id="@+id/img0011"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img0012"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_weight="1"
+            android:background="@drawable/backright"
+            android:tag="outlined_button_style4" />
+
+        <android.widget.Button
+            android:id="@+id/img0110"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="1"
+            android:layout_column="3"
+            android:layout_weight="1"
+            android:background="@drawable/backleft"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img0111"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="1"
+            android:layout_column="4"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img0112"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="1"
+            android:layout_column="5"
+            android:layout_weight="1"
+            android:background="@drawable/backright"
+            android:tag="outlined_button_style4" />
+
+        <android.widget.Button
+            android:id="@+id/img0210"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="1"
+            android:layout_column="6"
+            android:layout_weight="1"
+            android:background="@drawable/backleft"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img0211"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="1"
+            android:layout_column="7"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img0212"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="1"
+            android:layout_column="8"
+            android:layout_weight="1"
+            android:background="@drawable/backright"
+            android:tag="outlined_button_style4" />
+
+        <android.widget.Button
+            android:id="@+id/img0020"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_weight="1"
+            android:background="@drawable/backleftbottom"
+            android:tag="outined_button_style8" />
+
+        <android.widget.Button
+            android:id="@+id/img0021"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_weight="1"
+            android:background="@drawable/backbottom"
+            android:tag="outlined_button_style2" />
+
+        <android.widget.Button
+            android:id="@+id/img0022"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:layout_weight="1"
+            android:background="@drawable/backbottomright"
+            android:tag="outlined_button_style5" />
+
+        <android.widget.Button
+            android:id="@+id/img0120"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="2"
+            android:layout_column="3"
+            android:layout_weight="1"
+            android:background="@drawable/backleftbottom"
+            android:tag="outlined_button_style2" />
+
+        <android.widget.Button
+            android:id="@+id/img0121"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="2"
+            android:layout_column="4"
+            android:layout_weight="1"
+            android:background="@drawable/backbottom"
+            android:tag="outlined_button_style2" />
+
+        <android.widget.Button
+            android:id="@+id/img0122"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="2"
+            android:layout_column="5"
+            android:layout_weight="1"
+            android:background="@drawable/backbottomright"
+            android:tag="outlined_button_style5" />
+
+        <android.widget.Button
+            android:id="@+id/img0220"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="2"
+            android:layout_column="6"
+            android:layout_weight="1"
+            android:background="@drawable/backleftbottom"
+            android:tag="outlined_button_style2" />
+
+        <android.widget.Button
+            android:id="@+id/img0221"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="2"
+            android:layout_column="7"
+            android:layout_weight="1"
+            android:background="@drawable/backbottom"
+            android:tag="outlined_button_style2" />
+
+        <android.widget.Button
+            android:id="@+id/img0222"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="2"
+            android:layout_column="8"
+            android:layout_weight="1"
+            android:background="@drawable/backbottomright"
+            android:tag="outlined_button_style10" />
+
+        <android.widget.Button
+            android:id="@+id/img1000"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:layout_weight="1"
+            android:background="@drawable/backlefttop"
+            android:tag="outlined_button_style3" />
+
+        <android.widget.Button
+            android:id="@+id/img1001"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_weight="1"
+            android:background="@drawable/backtop"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img1002"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="3"
+            android:layout_column="2"
+            android:layout_weight="1"
+            android:background="@drawable/backrighttop"
+            android:tag="outlined_button_style4" />
+
+        <android.widget.Button
+            android:id="@+id/img1100"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="3"
+            android:layout_column="3"
+            android:layout_weight="1"
+            android:background="@drawable/backlefttop"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img1101"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="3"
+            android:layout_column="4"
+            android:layout_weight="1"
+            android:background="@drawable/backtop"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img1102"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="3"
+            android:layout_column="5"
+            android:layout_weight="1"
+            android:background="@drawable/backrighttop"
+            android:tag="outlined_button_style4" />
+
+        <android.widget.Button
+            android:id="@+id/img1200"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="3"
+            android:layout_column="6"
+            android:layout_weight="1"
+            android:background="@drawable/backlefttop"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img1201"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="3"
+            android:layout_column="7"
+            android:layout_weight="1"
+            android:background="@drawable/backtop"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img1202"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="3"
+            android:layout_column="8"
+            android:layout_weight="1"
+            android:background="@drawable/backrighttop"
+            android:tag="outlined_button_style4" />
+
+        <android.widget.Button
+            android:id="@+id/img1010"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:layout_weight="1"
+            android:background="@drawable/backleft"
+            android:tag="outlined_button_style3" />
+
+        <android.widget.Button
+            android:id="@+id/img1011"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img1012"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="4"
+            android:layout_column="2"
+            android:layout_weight="1"
+            android:background="@drawable/backright"
+            android:tag="outlined_button_style4" />
+
+        <android.widget.Button
+            android:id="@+id/img1110"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="4"
+            android:layout_column="3"
+            android:layout_weight="1"
+            android:background="@drawable/backleft"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img1111"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="4"
+            android:layout_column="4"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img1112"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="4"
+            android:layout_column="5"
+            android:layout_weight="1"
+            android:background="@drawable/backright"
+            android:tag="outlined_button_style4" />
+
+        <android.widget.Button
+            android:id="@+id/img1210"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="4"
+            android:layout_column="6"
+            android:layout_weight="1"
+            android:background="@drawable/backleft"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img1211"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="4"
+            android:layout_column="7"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img1212"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="4"
+            android:layout_column="8"
+            android:layout_weight="1"
+            android:background="@drawable/backright"
+            android:tag="outlined_button_style4" />
+
+        <android.widget.Button
+            android:id="@+id/img1020"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:layout_weight="1"
+            android:background="@drawable/backleftbottom"
+            android:tag="outined_button_style8" />
+
+        <android.widget.Button
+            android:id="@+id/img1021"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="5"
+            android:layout_column="1"
+            android:layout_weight="1"
+            android:background="@drawable/backbottom"
+            android:tag="outlined_button_style2" />
+
+        <android.widget.Button
+            android:id="@+id/img1022"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="5"
+            android:layout_column="2"
+            android:layout_weight="1"
+            android:background="@drawable/backbottomright"
+            android:tag="outlined_button_style5" />
+
+        <android.widget.Button
+            android:id="@+id/img1120"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="5"
+            android:layout_column="3"
+            android:layout_weight="1"
+            android:background="@drawable/backleftbottom"
+            android:tag="outlined_button_style2" />
+
+        <android.widget.Button
+            android:id="@+id/img1121"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="5"
+            android:layout_column="4"
+            android:layout_weight="1"
+            android:background="@drawable/backbottom"
+            android:tag="outlined_button_style2" />
+
+        <android.widget.Button
+            android:id="@+id/img1122"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="5"
+            android:layout_column="5"
+            android:layout_weight="1"
+            android:background="@drawable/backbottomright"
+            android:tag="outlined_button_style5" />
+
+        <android.widget.Button
+            android:id="@+id/img1220"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="5"
+            android:layout_column="6"
+            android:layout_weight="1"
+            android:background="@drawable/backleftbottom"
+            android:tag="outlined_button_style2" />
+
+        <android.widget.Button
+            android:id="@+id/img1221"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="5"
+            android:layout_column="7"
+            android:layout_weight="1"
+            android:background="@drawable/backbottom"
+            android:tag="outlined_button_style2" />
+
+        <android.widget.Button
+            android:id="@+id/img1222"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="5"
+            android:layout_column="8"
+            android:layout_weight="1"
+            android:background="@drawable/backbottomright"
+            android:tag="outlined_button_style10" />
+
+        <android.widget.Button
+            android:id="@+id/img2000"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="6"
+            android:layout_column="0"
+            android:layout_weight="1"
+            android:background="@drawable/backlefttop"
+            android:tag="outlined_button_style3" />
+
+        <android.widget.Button
+            android:id="@+id/img2001"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="6"
+            android:layout_column="1"
+            android:layout_weight="1"
+            android:background="@drawable/backtop"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img2002"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="6"
+            android:layout_column="2"
+            android:layout_weight="1"
+            android:background="@drawable/backrighttop"
+            android:tag="outlined_button_style4" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/img2100"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="6"
+            android:layout_column="3"
+            android:layout_weight="1"
+            android:background="@drawable/backlefttop"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img2101"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="6"
+            android:layout_column="4"
+            android:layout_weight="1"
+            android:background="@drawable/backtop"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img2102"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="6"
+            android:layout_column="5"
+            android:layout_weight="1"
+            android:background="@drawable/backrighttop"
+            android:tag="outlined_button_style4" />
+
+        <android.widget.Button
+            android:id="@+id/img2200"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="6"
+            android:layout_column="6"
+            android:layout_weight="1"
+            android:background="@drawable/backlefttop"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img2201"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="6"
+            android:layout_column="7"
+            android:layout_weight="1"
+            android:background="@drawable/backtop"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img2202"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="6"
+            android:layout_column="8"
+            android:layout_weight="1"
+            android:background="@drawable/backrighttop"
+            android:tag="outlined_button_style4" />
+
+        <android.widget.Button
+            android:id="@+id/img2010"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="7"
+            android:layout_column="0"
+            android:layout_weight="1"
+            android:background="@drawable/backleft"
+            android:tag="outlined_button_style3" />
+
+        <android.widget.Button
+            android:id="@+id/img2011"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="7"
+            android:layout_column="1"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img2012"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="7"
+            android:layout_column="2"
+            android:layout_weight="1"
+            android:background="@drawable/backright"
+            android:tag="outlined_button_style4" />
+
+        <android.widget.Button
+            android:id="@+id/img2110"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="7"
+            android:layout_column="3"
+            android:layout_weight="1"
+            android:background="@drawable/backleft"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img2111"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="7"
+            android:layout_column="4"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img2112"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="7"
+            android:layout_column="5"
+            android:layout_weight="1"
+            android:background="@drawable/backright"
+            android:tag="outlined_button_style4" />
+
+        <android.widget.Button
+            android:id="@+id/img2210"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="7"
+            android:layout_column="6"
+            android:layout_weight="1"
+            android:background="@drawable/backleft"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img2211"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="7"
+            android:layout_column="7"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:tag="outlined_button_style11" />
+
+        <android.widget.Button
+            android:id="@+id/img2212"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="7"
+            android:layout_column="8"
+            android:layout_weight="1"
+            android:background="@drawable/backright"
+            android:tag="outlined_button_style4" />
+
+        <android.widget.Button
+            android:id="@+id/img2020"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="8"
+            android:layout_column="0"
+            android:layout_weight="1"
+            android:background="@drawable/backleftbottom"
+            android:tag="outined_button_style8" />
+
+        <android.widget.Button
+            android:id="@+id/img2021"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="8"
+            android:layout_column="1"
+            android:layout_weight="1"
+            android:background="@drawable/backbottom"
+            android:tag="outlined_button_style2" />
+
+        <android.widget.Button
+            android:id="@+id/img2022"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="8"
+            android:layout_column="2"
+            android:layout_weight="1"
+            android:background="@drawable/backbottomright"
+            android:tag="outlined_button_style5" />
+
+        <android.widget.Button
+            android:id="@+id/img2120"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="8"
+            android:layout_column="3"
+            android:layout_weight="1"
+            android:background="@drawable/backleftbottom"
+            android:tag="outlined_button_style2" />
+
+        <android.widget.Button
+            android:id="@+id/img2121"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="8"
+            android:layout_column="4"
+            android:layout_weight="1"
+            android:background="@drawable/backbottom"
+            android:tag="outlined_button_style2" />
+
+        <android.widget.Button
+            android:id="@+id/img2122"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="8"
+            android:layout_column="5"
+            android:layout_weight="1"
+            android:background="@drawable/backbottomright"
+            android:tag="outlined_button_style5" />
+
+        <android.widget.Button
+            android:id="@+id/img2220"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="8"
+            android:layout_column="6"
+            android:layout_weight="1"
+            android:background="@drawable/backleftbottom"
+            android:tag="outlined_button_style2" />
+
+        <android.widget.Button
+            android:id="@+id/img2221"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="8"
+            android:layout_column="7"
+            android:layout_weight="1"
+            android:background="@drawable/backbottom"
+            android:tag="outlined_button_style2" />
+
+        <android.widget.Button
+            android:id="@+id/img2222"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_row="8"
+            android:layout_column="8"
+            android:layout_weight="1"
+            android:background="@drawable/backbottomright"
+            android:tag="outlined_button_style10" />
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/lyBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginBottom="200dp"
+        android:gravity="center"
+        android:layoutDirection="ltr"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout">
+
+        <Space
+            android:layout_width="2.5dp"
+            android:layout_height="wrap_content"></Space>
+        <android.widget.Button
+            android:id="@+id/btn1"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:text="1"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:textSize="20dp" />
+
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"></Space>
+
+        <android.widget.Button
+            android:id="@+id/btn2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:text="2"
+            android:textStyle="bold"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:textSize="20dp" />
+
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"></Space>
+
+        <android.widget.Button
+            android:id="@+id/btn3"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:text="3"
+            android:textStyle="bold"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:textSize="20dp" />
+
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"></Space>
+
+        <android.widget.Button
+            android:id="@+id/btn4"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:text="4"
+            android:textStyle="bold"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:textSize="20dp" />
+
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"></Space>
+
+        <android.widget.Button
+            android:id="@+id/btn5"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:text="5"
+            android:textStyle="bold"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:textSize="20dp" />
+
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"></Space>
+
+        <android.widget.Button
+            android:id="@+id/btn6"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:text="6"
+            android:textStyle="bold"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:textSize="20dp" />
+
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"></Space>
+
+        <android.widget.Button
+            android:id="@+id/btn7"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:text="7"
+            android:textStyle="bold"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:textSize="20dp" />
+
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"></Space>
+
+        <android.widget.Button
+            android:id="@+id/btn8"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:text="8"
+            android:textStyle="bold"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:textSize="20dp" />
+
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"></Space>
+
+        <android.widget.Button
+            android:id="@+id/btn9"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@drawable/back"
+            android:text="9"
+            android:textStyle="bold"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:textSize="20dp" />
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"></Space>
+
+        <android.widget.Button
+            android:id="@+id/btn0"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_action_trash"
+            android:text=""
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:fontFamily="cursive"
+            android:textSize="20dp" />
+        <Space
+            android:layout_width="2.5dp"
+            android:layout_height="wrap_content"></Space>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lyEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:layout_marginBottom="60dp"
+        android:gravity="center"
+        android:layoutDirection="ltr"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lyBtn">
+
+        <Space
+            android:layout_width="2.5dp"
+            android:layout_height="wrap_content"></Space>
+
+        <android.widget.Button
+            android:id="@+id/btnLeader"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:background="#FF9800"
+            android:fontFamily="cursive"
+            android:text="Leaders Board"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"></Space>
+
+        <android.widget.Button
+            android:id="@+id/btnRestart"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:background="#FF9800"
+            android:fontFamily="cursive"
+            android:text="Restart"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="2.5dp"
+            android:layout_height="wrap_content"></Space>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:layoutDirection="ltr"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lyEnd">
+
+        <android.widget.Button
+            android:id="@+id/btnShow"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:background="#FF9800"
+            android:fontFamily="cursive"
+            android:text="Show Board"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
